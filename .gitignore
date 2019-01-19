@@ -1,2 +1,8 @@
 env
 .idea
+
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+variables.json

@@ -1,0 +1,13 @@
+plugin: gcp_compute
+projects:
+  - docker-228215
+filters:
+auth_kind: serviceaccount
+service_account_file: ~/.gcp/docker_service_account.json
+groups:
+  docker: "'docker' in name"
+hostnames:
+  - name
+  - public_ip
+compose:
+  ansible_host: networkInterfaces[0].accessConfigs[0].natIP

@@ -1,0 +1,7 @@
+---
+- name: Main
+  hosts: docker
+  become: true
+  roles:
+    - install_docker
+    - run_app
