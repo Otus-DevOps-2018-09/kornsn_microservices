@@ -1,0 +1,7 @@
+---
+# Playbook for packer that installs docker
+- name: Main
+  hosts: all
+  become: true
+  roles:
+    - install_docker

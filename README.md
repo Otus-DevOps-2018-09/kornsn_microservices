@@ -43,3 +43,16 @@ Server: Docker Engine - Community
     - удаление остановленных контейнеров `docker rm $(docker ps -a -q)` или `docker container prune`
     - показать используемые системные ресурсы `docker system df`
     - освободить неиспользуемые системные ресурсы `docker system prune`
+
+
+
+## Docker-2 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices.svg?branch=docker-2)](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices)
+
+Что сделано:
+- Установлен docker-machine
+- Создан docker host в gcp с помощью docker-machine
+- Создан docker образ с базой данных и приложением с помощью Dockerfile
+- Созданный образ сохранен в docker hub
+- Сделано поднятие инстансов приложения в gcp из ранее созданного образа с помощью Terraform
+- Создан плейбук ansible с использованием динамического инвентори для установки докера и запуска там образа приложения
+- Создан шаблон пакера, который делает образ с уже установленным Docker

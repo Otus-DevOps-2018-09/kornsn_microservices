@@ -1,0 +1,16 @@
+---
+# tasks file for run_app
+- package:
+    state: latest
+    name: python-pip
+
+- pip:
+    name:
+      - docker
+
+- name: Run app
+  docker_container:
+    image: kornsn/otus-reddit:1.0
+    published_ports:
+      - 9292:9292
+    name: otus_reddit
