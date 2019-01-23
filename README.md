@@ -67,3 +67,20 @@ Server: Docker Engine - Community
 - Образы соптимизированы таким образом, чтобы по максимуму использовать кэш
 - Образы соптимизированы по размеру -- в качестве базовых образов использованы соответствующие alpine образы
 - Создан и подключен Volume для хранения данных MongoDB
+
+
+
+## Docker-4 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices.svg?branch=docker-4)](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices)
+
+Как задать базовое имя проекта:
+```bash
+docker-compose -p <your-project-name> <command>
+```
+
+Что сделано:
+- Изучена работа с сетями в docker
+- Создан и параметризирован файл docker-compose
+- Поднят тестовый кластер с помощью docker-compose
+- Создан файл docker-compose.override.yml, который позволяет:
+    - Изменять код каждого из приложений, не выполняя сборку образа
+    - Запускать puma для руби приложений в дебаг режиме с двумя воркерами
