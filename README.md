@@ -84,3 +84,13 @@ docker-compose -p <your-project-name> <command>
 - Создан файл docker-compose.override.yml, который позволяет:
     - Изменять код каждого из приложений, не выполняя сборку образа
     - Запускать puma для руби приложений в дебаг режиме с двумя воркерами
+
+
+
+## Gitlab-CI-1 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices.svg?branch=gitlab-ci-1)](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices)
+
+Что сделано:
+- Установлен Gitlab-CI CE на машину в облаке GCP с помощью docker-compose
+- Создан тестовый проект
+- Настроен пайплайн для тестового проекта
+- Сделана интеграция с каналом [slack](https://devops-team-otus.slack.com/messages/CDMRXRXTK/?).
