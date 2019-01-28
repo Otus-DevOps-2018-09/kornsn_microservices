@@ -1,0 +1,12 @@
+---
+- name: Unregister runner
+  hosts: gitlab-ci
+  tasks:
+    - name: Unregister
+      command: >
+        docker exec gitlab-runner gitlab-runner unregister
+        --url 'http://{{ ansible_host }}/'
+        --token '{{ token }}'
+      register: output
+
+    - debug: var=output.stderr_lines

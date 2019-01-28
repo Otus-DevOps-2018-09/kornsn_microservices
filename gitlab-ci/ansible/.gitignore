@@ -1,0 +1,4 @@
+*.retry
+vars.yml
+roles/geerlingguy.pip
+roles/geerlingguy.docker
