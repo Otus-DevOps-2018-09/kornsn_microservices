@@ -1,0 +1,29 @@
+---
+- name: Install gitlab using docker
+  hosts: gitlab-ci
+  become: true
+  tasks:
+    - name: Installing packages
+      package:
+        name: python-pip
+        state: present
+
+    - name: Installing docker compose
+      pip:
+        name: docker-compose
+        state: present
+
+    - name: Create dirs
+      file:
+        path: /srv/gitlab
+        state: directory
+
+    - name: Copy docker-compose file
+      template:
+        src: templates/docker-compose.j2
+        dest: /srv/gitlab/docker-compose.yml
+
+    - name: Start Gitlab-CI
+      docker_service:
+        project_src: /srv/gitlab
+        state: present

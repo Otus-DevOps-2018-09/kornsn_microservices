@@ -1,0 +1,16 @@
+---
+- name: Install docker and pip
+  hosts: gitlab-ci
+  become: true
+  vars:
+    pip_install_packages:
+      - name: docker
+  tasks:
+    - name: Add appuser into docker group
+      user:
+        name: appuser
+        groups: docker
+        append: yes
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker

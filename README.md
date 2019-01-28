@@ -94,3 +94,16 @@ docker-compose -p <your-project-name> <command>
 - Создан тестовый проект
 - Настроен пайплайн для тестового проекта
 - Сделана интеграция с каналом [slack](https://devops-team-otus.slack.com/messages/CDMRXRXTK/?).
+
+
+
+## Gitlab-CI-2 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices.svg?branch=gitlab-ci-2)](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices)
+
+Что сделано:
+- Написана конфигурация для установки Gitlab-CI CE в облако GCP с помощью terraform и ansible
+- Дополнен CI/CD пайплайн -- добавлены окружения:
+    - dev -- автоматическое
+    - stage -- ручное
+    - prod -- ручное
+    - динамическое окружение на каждую фича-ветку
+- Для окружений stage и prod добавлено ограничение, что они могут создаваться только для коммитов, содержащих semver тэг

@@ -1,0 +1,30 @@
+---
+- name: Register runner
+  hosts: gitlab-ci
+  gather_facts: no
+  tasks:
+    - command: >
+        docker network inspect
+        -f '{''{range .IPAM.Config}''}''{''{.Gateway}''}''{''{end}''}' bridge
+      register: gateway_out
+    - set_fact:
+        gateway: "{{ gateway_out.stdout }}"
+    - debug:
+        msg: "Gateway: {{ gateway }}"
+
+    - name: Register
+      command: >
+        docker exec gitlab-runner gitlab-runner register
+        --non-interactive
+        --url 'http://{{ gateway }}/'
+        --registration-token '{{ registration_token }}'
+        --description '{{ item }}'
+        --run-untagged=true
+        --locked=false
+        --executor=docker
+        --docker-image=alpine:latest
+      register: output
+      loop: "{{ runner_names }}"
+
+    - debug: var=output.stdout_lines
+    - debug: var=output.stderr_lines

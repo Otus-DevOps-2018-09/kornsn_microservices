@@ -1,0 +1,12 @@
+---
+- name: List runners
+  hosts: gitlab-ci
+  gather_facts: no
+  tasks:
+    - name: List
+      command: >
+        docker exec gitlab-runner gitlab-runner list
+      register: output
+
+    - debug:
+        var: output.stderr_lines
