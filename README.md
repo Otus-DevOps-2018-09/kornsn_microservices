@@ -107,3 +107,19 @@ docker-compose -p <your-project-name> <command>
     - prod -- ручное
     - динамическое окружение на каждую фича-ветку
 - Для окружений stage и prod добавлено ограничение, что они могут создаваться только для коммитов, содержащих semver тэг
+
+
+
+## Monitoring-1 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices.svg?branch=monitoring-1)](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices)
+
+[Докер хаб с собранными образами здесь](https://hub.docker.com/u/kornsn)
+
+Что сделано:
+- Написана новая конфигурация микросервисов, включающая в себя мониторинг
+  с помощью Prometheus
+- Мониторятся:
+    - ui
+    - comment
+    - post
+    - prometheus
+    - node
