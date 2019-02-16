@@ -123,3 +123,16 @@ docker-compose -p <your-project-name> <command>
     - post
     - prometheus
     - node
+
+
+
+## Monitoring-2 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices.svg?branch=monitoring-2)](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices)
+
+[Докер хаб с собранными образами здесь](https://hub.docker.com/u/kornsn)
+
+Что сделано:
+- Настроен сбор метрик докера с помощью [cAdvisor](https://github.com/google/cadvisor)
+- Подняты [Grafana](https://grafana.com/) и [AlertManager](https://prometheus.io/docs/alerting/alertmanager/)
+- Настроены дашборды для сбора метрик приложения и бизнес метрик
+- Настроены алерты на остановку сервисов
+- Написан [Makefile](Makefile) для сборки и запуска сервисов
