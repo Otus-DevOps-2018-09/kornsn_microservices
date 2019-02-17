@@ -136,3 +136,14 @@ docker-compose -p <your-project-name> <command>
 - Настроены дашборды для сбора метрик приложения и бизнес метрик
 - Настроены алерты на остановку сервисов
 - Написан [Makefile](Makefile) для сборки и запуска сервисов
+
+
+
+## Logging-1 [![Build Status](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices.svg?branch=logging-1)](https://travis-ci.com/Otus-DevOps-2018-09/kornsn_microservices)
+
+Что сделано:
+- Настроен сбор логов с помощью EFK стэка (Elasticsearch, Fluentd, Kibana)
+- В Fluentd настроен парсинг структурированных логов из сервиса Post
+- В Fluentd настроен парсинг неструктурированных логов из сервиса UI
+    - \* также настроен парсинг второго типа логов
+- Настроена распределенная трасировка с помощью Zipkin
